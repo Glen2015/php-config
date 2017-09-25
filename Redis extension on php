@@ -1,0 +1,15 @@
+Go to http://pecl.php.net and choose a version on redis, and then download it.
+Copy the file downloaded in a directory A on the unix server.
+Go to directory A and decompress the file.(command: tar -zxvf redis-3.1.2.tgz)
+Go to your php directory(mine is /Data/apps/php7) and go to bin, you will find the phpize.
+command: phpize (or /Data/apps/php7/bin/phpize)
+command: ./configure --with-php-config=/Data/apps/php7/bin/php-config
+command: make
+command: make test
+command: make install
+command: php --ini.(this command can help you find your php initial file's directory,mine is in /Data/apps/php7/etc)
+go to /Data/apps/php7/etc to make some change in the initial file.(command: vim /Data/apps/php7/etc/php.ini)
+Add 'extension = redis.so' in the file.
+command: php -m.(you will find redis is in the php extension now)
+restart your php server. (My way is: find the php-fpm, generally is in the php's sbin directory:/Data/apps/php7/sbin/,and then killall php-fpm,which means to shut down the php server and use the command: ./Data/apps/php7/sbin/php-fpm,which means to start the php server)
+Notes: there may be a error when you start the php server. The server don't let you start the php server as a root, you may change the root user to another user to start the php server. Find your php configure file,command:cd /Data/apps/php7/etc/php-fpm.d and change the start option.
