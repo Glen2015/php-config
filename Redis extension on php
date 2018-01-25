@@ -3,7 +3,7 @@ Copy the file downloaded in a directory A on the unix server.
 Go to directory A and decompress the file.(command: tar -zxvf redis-3.1.2.tgz)
 Go to your php directory(mine is /Data/apps/php7) and go to bin, you will find the phpize.
 command: phpize (or /Data/apps/php7/bin/phpize)
-command: ./configure --with-php-config=/Data/apps/php7/bin/php-config
+command: ./configure --with-php-config=/Data/apps/php7/bin/php-config (Data/apps/php7/bin/php-config is my direcitory for the php configuration,you need to find yours)
 command: make
 command: make test
 command: make install
